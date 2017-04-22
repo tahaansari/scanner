@@ -22,20 +22,26 @@ $$(document).on('deviceready', function() {
     cordova.plugins.barcodeScanner.scan(
       function (result) {
 
-        alert("result is "+result);
-        // cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
-        //      // mainView.router.load({
-        //      //    url:"result.html",
-        //      //    query:{
-        //      //        resultText: success,
-        //      //        resultFormat: result.format
-        //      //    }
-        //      //  })
+        alert("result is "+result.text);    
 
-        //   }, function(fail) {
-        //     alert("encoding failed: " + fail);
-        //   }
-        // );
+        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
+       
+        alert("encode result is "+success);    
+
+             // mainView.router.load({
+             //    url:"result.html",
+             //    query:{
+             //        resultText: success,
+             //        resultFormat: result.format
+             //    }
+             //  })
+
+          }, function(fail) {
+            alert("encoding failed: " + fail);
+          }
+        );
+
+
       },
       function (error) {
           alert("Scanning failed: " + error);
