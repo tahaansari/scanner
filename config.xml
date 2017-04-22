@@ -38,7 +38,7 @@
 
     <plugin spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git#v6.0.6"/>
 
-    
+
 
 <!-- 
     <gap:config-file platform="ios" parent="NSCameraUsageDescription" overwrite="true">
@@ -52,8 +52,8 @@
 
     <platform name="android">
         <icon src="res/icon/android/drawable-ldpi-icon.png" density="ldpi" />
-        <icon src="res/icon/android/mdpi.jpg" density="mdpi" />
-        <icon src="res/icon/android/hdpi.jpg" density="hdpi" />
+        <icon src="res/icon/android/mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/hdpi.png" density="hdpi" />
         <icon src="res/icon/android/drawable-xhdpi-icon.png" density="xhdpi" />
         <icon src="res/icon/android/drawable-xxhdpi-icon.png" density="xxhdpi" />
         <icon src="res/icon/android/drawable-xxxhdpi-icon.png" density="xxxhdpi" />

@@ -14,33 +14,17 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
 
-    // mainView.router.loadPage('result.html');
-    // return false;
-
     console.log("Device is ready!");
-
     cordova.plugins.barcodeScanner.scan(
       function (result) {
 
-        alert("result is "+result.text);    
-
-        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
-       
-        alert("encode result is "+success);    
-
-             // mainView.router.load({
-             //    url:"result.html",
-             //    query:{
-             //        resultText: success,
-             //        resultFormat: result.format
-             //    }
-             //  })
-
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
-
+        mainView.router.load({
+            url:"result.html",
+            query:{
+                resultText: result.text,
+                resultFormat: result.format
+            }
+        })
 
       },
       function (error) {
@@ -66,8 +50,21 @@ $$(document).on('deviceready', function() {
 
 myApp.onPageInit('result', function (page) {
 
-    alert("result text is"+page.query.resultText);
-    alert("result format is"+page.query.resultFormat);
+    $('#format').html(page.query.resultFormat);
+
+    var html = "";
+    var countText = 0;
+    for (var i = 0; i < page.query.resultText.length; i++) {
+        console.log("text is "+page.query.resultText[i]);
+        html += page.query.resultText[i];
+        countText++;
+        if(countText==20){
+            html +="<br>";
+            countText = 0;
+        }
+    }
+
+    $('#decoded').html(html);
 
 
 })
