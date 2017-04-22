@@ -14,7 +14,6 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
 
-
     // mainView.router.loadPage('result.html');
     // return false;
 
@@ -23,25 +22,20 @@ $$(document).on('deviceready', function() {
     cordova.plugins.barcodeScanner.scan(
       function (result) {
 
-        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
-            
-             myApp.alert("encode success: " + success);
-             
-             console.log("encode success: " + success);
+        alert("result is "+result);
+        // cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
+        //      // mainView.router.load({
+        //      //    url:"result.html",
+        //      //    query:{
+        //      //        resultText: success,
+        //      //        resultFormat: result.format
+        //      //    }
+        //      //  })
 
-
-             // mainView.router.load({
-             //    url:"result.html",
-             //    query:{
-             //        resultText: success,
-             //        resultFormat: result.format
-             //    }
-             //  })
-
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
+        //   }, function(fail) {
+        //     alert("encoding failed: " + fail);
+        //   }
+        // );
       },
       function (error) {
           alert("Scanning failed: " + error);
@@ -50,7 +44,7 @@ $$(document).on('deviceready', function() {
           preferFrontCamera : false, // iOS and Android
           showFlipCameraButton : true, // iOS and Android
           showTorchButton : true, // iOS and Android
-          torchOn: true, // Android, launch with the torch switched on (if available)
+          torchOn: false, // Android, launch with the torch switched on (if available)
           prompt : "Place a barcode inside the scan area", // Android
           resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
           formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
