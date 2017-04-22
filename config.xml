@@ -37,6 +37,9 @@
 
 
     <plugin spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git#v6.0.6"/>
+    <plugin spec="https://github.com/apache/cordova-plugin-inappbrowser.git#rel/1.7.0"/>
+
+
 
 
 
@@ -54,9 +57,9 @@
         <icon src="res/icon/android/drawable-ldpi-icon.png" density="ldpi" />
         <icon src="res/icon/android/mdpi.png" density="mdpi" />
         <icon src="res/icon/android/hdpi.png" density="hdpi" />
-        <icon src="res/icon/android/drawable-xhdpi-icon.png" density="xhdpi" />
-        <icon src="res/icon/android/drawable-xxhdpi-icon.png" density="xxhdpi" />
-        <icon src="res/icon/android/drawable-xxxhdpi-icon.png" density="xxxhdpi" />
+        <icon src="res/icon/android/hdpi.png" density="xhdpi" />
+        <icon src="res/icon/android/hdpi.png" density="xxhdpi" />
+        <icon src="res/icon/android/hdpi.png" density="xxxhdpi" />
 
         <splash src="res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi" />
         <splash src="res/screen/android/drawable-land-mdpi-screen.png" density="land-mdpi" />

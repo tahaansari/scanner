@@ -8,14 +8,55 @@ var $$ = Dom7;
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     // dynamicNavbar: true,
-    pushState:true
+    pushState:true,
+    modalTitle: 'Scanner',
+    // uniqueHistory: true,
+
 });
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
 
     console.log("Device is ready!");
-    cordova.plugins.barcodeScanner.scan(
+
+    console.log("barcode "+cordova.plugins.barcodeScanner);
+    console.log("inapppBrowser "+cordova.plugins.barcodeScanner);
+
+
+
+
+    document.addEventListener("backbutton", function(e) {
+
+        e.preventDefault();
+        var page = myApp.getCurrentView().activePage;
+        myApp.hideIndicator();
+        myApp.closePanel();
+
+        if (page.name == "index") {
+
+            myApp.confirm('would you like to exit app.', function() {
+                navigator.app.clearHistory();
+                navigator.app.exitApp();
+            });
+
+        } else {
+
+            mainView.router.back({});
+        }
+
+    }, false);
+
+
+    mainView.router.loadPage('index.html');
+
+
+});
+
+
+myApp.onPageInit('index', function (page) {
+
+
+      cordova.plugins.barcodeScanner.scan(
       function (result) {
 
         mainView.router.load({
@@ -45,13 +86,13 @@ $$(document).on('deviceready', function() {
    );
 
 
+})
 
-});
+
 
 myApp.onPageInit('result', function (page) {
 
     $('#format').html(page.query.resultFormat);
-
     var html = "";
     var countText = 0;
     for (var i = 0; i < page.query.resultText.length; i++) {
@@ -63,8 +104,12 @@ myApp.onPageInit('result', function (page) {
             countText = 0;
         }
     }
-
     $('#decoded').html(html);
 
 
+    $('.browser-btn').click(function(){
+        cordova.InAppBrowser.open(page.query.resultText, '_system', 'location=yes');
+    })
 })
+
+
