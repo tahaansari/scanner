@@ -54,8 +54,8 @@
     <!--<plugin name="cordova-plugin-wkwebview-engine" spec="~1.0.1" />-->
 
     <platform name="android">
-        <icon src="res/icon/android/drawable-ldpi-icon.png" density="ldpi" />
-        <icon src="res/icon/android/mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/hdpi.png" density="ldpi" />
+        <icon src="res/icon/android/hdpi.png" density="mdpi" />
         <icon src="res/icon/android/hdpi.png" density="hdpi" />
         <icon src="res/icon/android/hdpi.png" density="xhdpi" />
         <icon src="res/icon/android/hdpi.png" density="xxhdpi" />
