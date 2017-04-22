@@ -1,7 +1,6 @@
 // Initialize app
 var myApp = new Framework7();
 
-
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
@@ -14,31 +13,61 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
+
+
+    // mainView.router.loadPage('result.html');
+    // return false;
+
     console.log("Device is ready!");
+
+    cordova.plugins.barcodeScanner.scan(
+      function (result) {
+
+        cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, result.text, function(success) {
+            
+             myApp.alert("encode success: " + success);
+             
+             console.log("encode success: " + success);
+
+
+             // mainView.router.load({
+             //    url:"result.html",
+             //    query:{
+             //        resultText: success,
+             //        resultFormat: result.format
+             //    }
+             //  })
+
+          }, function(fail) {
+            alert("encoding failed: " + fail);
+          }
+        );
+      },
+      function (error) {
+          alert("Scanning failed: " + error);
+      },
+      {
+          preferFrontCamera : false, // iOS and Android
+          showFlipCameraButton : true, // iOS and Android
+          showTorchButton : true, // iOS and Android
+          torchOn: true, // Android, launch with the torch switched on (if available)
+          prompt : "Place a barcode inside the scan area", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations : true, // iOS
+          disableSuccessBeep: false // iOS
+      }
+   );
+
+
+
 });
 
+myApp.onPageInit('result', function (page) {
 
-// Now we need to run the code that will be executed only for About page.
+    alert("result text is"+page.query.resultText);
+    alert("result format is"+page.query.resultFormat);
 
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
 
-})
-
-// Option 2. Using one 'pageInit' event handler for all pages:
-$$(document).on('pageInit', function (e) {
-    // Get page data from event data
-    var page = e.detail.page;
-
-    if (page.name === 'about') {
-        // Following code will be executed for page with data-page attribute equal to "about"
-        myApp.alert('Here comes About page');
-    }
-})
-
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    myApp.alert('Here comes About page');
 })

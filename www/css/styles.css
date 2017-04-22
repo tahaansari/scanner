@@ -10,6 +10,10 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
+html,body{
+	font-family: 'Roboto', sans-serif;
+
+}
 .statusbar-overlay {
     background: #000000;
 }
@@ -20,4 +24,74 @@
 
 .navbar-fixed .tabbar-fixed .page-content, .navbar-fixed .toolbar-fixed .page-content, .navbar-fixed.tabbar-fixed .page-content, .navbar-fixed.toolbar-fixed .page-content, .tabbar-fixed .navbar-fixed .page-content, .toolbar-fixed .navbar-fixed .page-content {
      padding-top: 57px;; 
+}
+
+
+.btn-container{
+
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+}
+.browser-btn{
+
+	background: #2196F3;
+    border: none;
+    padding: 3%;
+    width: 100%;
+    color: white;
+    letter-spacing: 2px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.mar0{
+	margin: 0!important;
+}
+.pad0{
+	padding: 0!important;
+}
+.clipboard-btn{
+
+	background: #64B5F6;
+    border: none;
+    padding: 3%;
+    width: 100%;
+    color: white;
+    letter-spacing: 2px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.text-center{
+
+	text-align: center;
+}
+
+.content-container{
+	padding: 0 3%;
+}
+
+b{
+	color: #2196F3;
+	letter-spacing: 1px;
+}
+
+span{
+	letter-spacing: 1px;
+}
+
+.text-green{
+	color: green;
+}
+
+.result{
+	text-align: left;
+    margin: auto;
+    color: green;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 3px;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 11%;
 }
