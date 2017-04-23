@@ -128,3 +128,24 @@ ul{
     background: #2196f3;
     color: white;
 }*/
+
+.qr-container{
+
+    background: black;
+    padding: 10%;
+    text-align: center;
+}
+
+.modal-inner {
+    padding: 5%;
+    position: relative;
+    background: #286393;
+    color: white;
+}
+
+.modal-title {
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.3;
+}
