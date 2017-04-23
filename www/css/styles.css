@@ -35,23 +35,18 @@ h1,h2,p{
 }
 
 
-.btn-container{
-
-    position: fixed;
-    width: 100%;
-    bottom: 0px;
-
-}
 .browser-btn{
 
-    background: #2196F3;
+    position: fixed;
+    background: #42a5f5;
     border: none;
     padding: 4%;
     width: 100%;
     color: white;
     letter-spacing: 2px;
     font-family: 'Roboto', sans-serif;
-
+    bottom: 0;
+    margin: 0;
 }
 
 .mar0{
@@ -59,16 +54,6 @@ h1,h2,p{
 }
 .pad0{
 	padding: 0!important;
-}
-.clipboard-btn{
-
-	background: #64B5F6;
-    border: none;
-    padding: 3%;
-    width: 100%;
-    color: white;
-    letter-spacing: 2px;
-	font-family: 'Roboto', sans-serif;
 }
 
 .text-center{
@@ -81,13 +66,19 @@ h1,h2,p{
 }
 
 b{
-	color: #2196F3;
+	color: #2196f3;
 	letter-spacing: 1px;
 }
 
 p{
 
   margin:0;
+
+}
+
+ul{
+  color: green;
+}
 
   .btn-scan{
 
@@ -120,10 +111,10 @@ p{
 .btn-scan{
 
   width: 100%;
-    padding: 3%;
+    padding: 4%;
     border: none;
     color: white;
-    background: #0097a7;
+    background: #42a5f5;
     margin: 3% 0%;
 }
 
@@ -131,3 +122,9 @@ p{
 
   margin:1% 0;
 }
+
+/*.page-content{
+
+    background: #2196f3;
+    color: white;
+}*/

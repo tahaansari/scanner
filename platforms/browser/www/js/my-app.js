@@ -59,23 +59,23 @@ myApp.onPageInit('index', function (page) {
 
 myApp.onPageInit('result', function (page) {
 
-    // $('#format').html(page.query.resultFormat);
-    // var html = "";
-    // var countText = 0;
-    // for (var i = 0; i < page.query.resultText.length; i++) {
-    //     console.log("text is "+page.query.resultText[i]);
-    //     html += page.query.resultText[i];
-    //     countText++;
-    //     if(countText==30){
-    //         html +="<br>";
-    //         countText = 0;
-    //     }
-    // }
-    // $('#decoded').html(html);
+    $('#format').html(page.query.resultFormat);
+    var html = "";
+    var countText = 0;
+    for (var i = 0; i < page.query.resultText.length; i++) {
+        console.log("text is "+page.query.resultText[i]);
+        html += page.query.resultText[i];
+        countText++;
+        if(countText==30){
+            html +="<br>";
+            countText = 0;
+        }
+    }
+    $('#decoded').html(html);
 
-    // $('.browser-btn').click(function(){
-    //     cordova.InAppBrowser.open(page.query.resultText, '_system', 'location=yes');
-    // })
+    $('.browser-btn').click(function(){
+        cordova.InAppBrowser.open(page.query.resultText, '_system', 'location=yes');
+    })
 })
 
 
