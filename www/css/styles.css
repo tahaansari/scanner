@@ -13,12 +13,12 @@
 html,body{
   margin:0!important;
   padding:0!important;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'robotoregular', sans-serif;
 }
 
 h1,h2,p{
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'robotoregular', sans-serif;
   letter-spacing: 1px;
 
 }
@@ -38,15 +38,16 @@ h1,h2,p{
 .browser-btn{
 
     position: fixed;
-    background: #42a5f5;
+    /*background: #42a5f5;*/
+    /*color: white;*/
     border: none;
     padding: 4%;
     width: 100%;
-    color: white;
     letter-spacing: 2px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'robotoregular', sans-serif;
     bottom: 0;
     margin: 0;
+    outline: none;
 }
 
 .mar0{
@@ -66,7 +67,7 @@ h1,h2,p{
 }
 
 b{
-	color: #2196f3;
+	color: black;
 	letter-spacing: 1px;
 }
 
@@ -80,43 +81,35 @@ ul{
   color: green;
 }
 
-  .btn-scan{
-
-    text-align: center;
+.btn-scan{
+    position: absolute;
     width: 100%;
-    padding: 3%;
+    padding: 4%;
     border: none;
-    color: white;
-    background: #0097a7;
-    margin: 3% 0%;
-  } 
-	letter-spacing: 1px;
+    margin: 0;
+    outline: none;
+    letter-spacing: 1px;
+    bottom: 0;
 }
+
 
 .text-green{
 	color: green;
 }
 
+
+
 .result{
 	text-align: left;
     margin: auto;
     color: green;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'robotoregular', sans-serif;
     letter-spacing: 3px;
     font-size: 22px;
     font-weight: 800;
     margin: 0 11%;
 }
 
-.btn-scan{
-
-  width: 100%;
-    padding: 4%;
-    border: none;
-    color: white;
-    background: #42a5f5;
-    margin: 3% 0%;
-}
 
 .mar1per{
 
@@ -131,8 +124,9 @@ ul{
 
 .qr-container{
 
-    background: black;
-    padding: 10%;
+    /*background: #dddddd;*/
+    border-bottom: 1px solid #dddddd;
+    padding: 1% 1% 1% 1%;
     text-align: center;
 }
 
@@ -148,4 +142,13 @@ ul{
     font-size: 20px;
     color: #ffffff;
     line-height: 1.3;
+}
+
+.padding-10-per{
+    padding: 9% 0;
+}
+
+.clicked{
+  background: #42a5f5!important;
+  color: white!important;
 }
