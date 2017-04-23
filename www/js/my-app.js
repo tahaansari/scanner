@@ -50,7 +50,7 @@ $$(document).on('deviceready', function() {
      // alert("Hello"); 
      mainView.router.loadPage('home.html');
 
-    }, 3000);
+    }, 2000);
 
 
 });
