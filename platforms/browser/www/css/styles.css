@@ -153,3 +153,10 @@ ul{
   background: #42a5f5!important;
   color: white!important;
 }
+
+.splash-container{
+    height: 100%;
+    overflow: hidden;
+    margin: 0!important;
+    padding: 0!important;
+}

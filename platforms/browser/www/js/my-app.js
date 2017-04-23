@@ -34,7 +34,7 @@ $$(document).on('deviceready', function() {
         myApp.hideIndicator();
         myApp.closePanel();
 
-        if (mainView.activePage.name === "index") {
+        if (mainView.activePage.name === "home") {
             myApp.confirm('would you like to exit app.', function() {
                 navigator.app.clearHistory();
                 navigator.app.exitApp();
@@ -46,13 +46,26 @@ $$(document).on('deviceready', function() {
 
     }, false);
 
+    setTimeout(function(){
+     // alert("Hello"); 
+     mainView.router.loadPage('home.html');
+
+    }, 3000);
+
 
 });
 
 
 myApp.onPageInit('index', function (page) {
-
     console.log('index page called');
+
+
+})
+
+
+myApp.onPageInit('home', function (page) {
+
+    console.log('home page called');
     $('.btn-scan').removeClass('clicked');
 
     $('.btn-scan').click(function(){
@@ -88,6 +101,8 @@ myApp.onPageInit('index', function (page) {
         );
     })
 })
+
+
 
 
 myApp.onPageInit('result', function (page) {
