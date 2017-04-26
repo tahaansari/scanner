@@ -82,7 +82,7 @@ ul{
 }
 
 .btn-scan{
-    position: absolute;
+    position: fixed;
     width: 100%;
     padding: 4%;
     border: none;
@@ -155,8 +155,14 @@ ul{
 }
 
 .splash-container{
+
     height: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0!important;
     padding: 0!important;
+}
+
+.pad-bottom{
+
+      padding-bottom: 10%!important;
 }

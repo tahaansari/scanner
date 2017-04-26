@@ -24,8 +24,8 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
 
     console.log("Device is ready!");
-    console.log("barcode "+cordova.plugins.barcodeScanner);
-    console.log("inapppBrowser "+cordova.plugins.barcodeScanner);
+    // console.log("barcode "+cordova.plugins.barcodeScanner);
+    // console.log("inapppBrowser "+cordova.plugins.barcodeScanner);
 
     document.addEventListener("backbutton", function(e) {
         e.preventDefault();
@@ -108,8 +108,8 @@ myApp.onPageInit('home', function (page) {
 myApp.onPageInit('result', function (page) {
 
     $('.browser-btn').removeClass('clicked');
-
     $('#format').html(page.query.resultFormat);
+    
     var html = "";
     var countText = 0;
     for (var i = 0; i < page.query.resultText.length; i++) {
@@ -121,10 +121,10 @@ myApp.onPageInit('result', function (page) {
             countText = 0;
         }
     }
+
     $('#decoded').html(html);
 
     $('.browser-btn').click(function(){
-        
         $('.browser-btn').addClass('clicked');
         cordova.InAppBrowser.open(page.query.resultText, '_system', 'location=yes');
     })
